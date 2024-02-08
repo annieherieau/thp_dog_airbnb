@@ -13,15 +13,25 @@ puts "--- tables destroy_all ---"
 City.destroy_all
 
 10.times do |i|
-  City.create(
+  c = City.create!(
     city_name: Faker::Address.city
   )
+  c.save!
 end
 puts "--- 10 cities ---"
 
 10.times do |i|
-  Dogsitter.create(
-    first_name: Faker::
+  Dogsitter.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name
   )
 end
-puts "--- 10 cities ---"
+puts "--- 10 dogsitters ---"
+
+40.times do |i|
+  Dog.create!(
+    name: Faker::Creature::Dog.name,
+    breed: Faker::Creature::Dog.breed
+  )
+end
+puts "--- 10 dogsitters ---"

@@ -26,9 +26,8 @@ To launch Rails console
 Print tables in Rails console
 ```bash
   > tp City.all
-  > tp Speciality.all
-  > tp Patient.all
-  > tp Doctor.all
-  > tp Appointement.all
+  > tp Dog.all
+  > tp Dogsitter.all
+  > tp Stroll.all
 ```
 
