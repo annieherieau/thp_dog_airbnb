@@ -18,3 +18,10 @@ City.destroy_all
   )
 end
 puts "--- 10 cities ---"
+
+10.times do |i|
+  Dogsitter.create(
+    first_name: Faker::
+  )
+end
+puts "--- 10 cities ---"
