@@ -7,3 +7,14 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "==== SEED ====="
+puts "--- tables destroy_all ---"
+City.destroy_all
+
+10.times do |i|
+  City.create(
+    city_name: Faker::Address.city
+  )
+end
+puts "--- 10 cities ---"
