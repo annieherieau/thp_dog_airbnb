@@ -26,7 +26,8 @@ puts "--- 10 cities ---"
 10.times do |i|
   Dogsitter.create!(
     first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name
+    last_name: Faker::Name.last_name,
+    city: City.all.sample
   )
 end
 puts "--- 10 dogsitters ---"
@@ -34,16 +35,21 @@ puts "--- 10 dogsitters ---"
 40.times do |i|
   Dog.create!(
     name: Faker::Creature::Dog.name,
-    breed: Faker::Creature::Dog.breed
+    breed: Faker::Creature::Dog.breed,
+    city: City.all.sample
   )
 end
 puts "--- 40 dogs ---"
 
 40.times do |i|
+  dog = Dog.all.sample
+  ds = Dogsitter.all.sample
   Stroll.create!(
     date: Faker::Date.between(from: Faker::Date.backward(days: 365), to: Faker::Date.forward(days: 23)),
-    dog: Dog.all.sample,
-    dogsitter: Dogsitter.all.sample
+    dog: dog,
+    dogsitter: Dogsitter.all.sample,
+    city: dog.city
   )
 end
-puts "--- 40 dogs ---"
+puts "--- 40 strolls ---"
+puts "==== END SEED ====="

@@ -25,9 +25,9 @@ To launch Rails console
 ```
 Print tables in Rails console
 ```bash
-  > tp City.all
-  > tp Dog.all
-  > tp Dogsitter.all
-  > tp Stroll.all
+  > tp City.all, :id, :city_name, :dog_ids, :dogsitter_ids, :stroll_ids
+  > tp Dog.all, :id, :name, :breed, :city_id, :dogsitter_ids, :stroll_ids
+  > tp Dogsitter.all, :id, :first_name, :city_id, :dog_ids, :stroll_ids
+  > tp Stroll.all, :date, :city_id, :dog_id, :dogsitter_id
 ```
 
