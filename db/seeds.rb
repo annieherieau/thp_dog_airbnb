@@ -11,6 +11,9 @@
 puts "==== SEED ====="
 puts "--- tables destroy_all ---"
 City.destroy_all
+Dogsitter.destroy_all
+Dog.destroy_all
+Stroll.destroy_all
 
 10.times do |i|
   c = City.create!(
@@ -34,4 +37,13 @@ puts "--- 10 dogsitters ---"
     breed: Faker::Creature::Dog.breed
   )
 end
-puts "--- 10 dogsitters ---"
+puts "--- 40 dogs ---"
+
+40.times do |i|
+  Stroll.create!(
+    date: Faker::Date.between(from: Faker::Date.backward(days: 365), to: Faker::Date.forward(days: 23)),
+    dog: Dog.all.sample,
+    dogsitter: Dogsitter.all.sample
+  )
+end
+puts "--- 40 dogs ---"

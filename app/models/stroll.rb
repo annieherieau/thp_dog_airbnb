@@ -1,4 +1,4 @@
 class Stroll < ApplicationRecord
-  belongs_to :dogs, optional: false
-  belongs_to :dogsitters, optional: false
+  belongs_to :dog, optional: false
+  belongs_to :dogsitter, optional: false
 end
